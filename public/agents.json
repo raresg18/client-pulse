@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Support Bot Alpha",
+    "role": "Customer Support",
+    "status": "Online",
+    "avatar": "smart_toy",
+    "tasks": "1.2k",
+    "rating": 4.8
+  },
+  {
+    "id": 2,
+    "name": "Sales Helper",
+    "role": "Lead Generation",
+    "status": "Offline",
+    "avatar": "rocket_launch",
+    "tasks": "450",
+    "rating": 4.5
+  },
+  {
+    "id": 3,
+    "name": "Email Drafter",
+    "role": "Copywriting",
+    "status": "Maintenance",
+    "avatar": "edit_note",
+    "tasks": "890",
+    "rating": 4.9
+  },
+  {
+    "id": 4,
+    "name": "Data Analyzer",
+    "role": "Analytics",
+    "status": "Online",
+    "avatar": "analytics",
+    "tasks": "3.5k",
+    "rating": 5.0
+  }
+]

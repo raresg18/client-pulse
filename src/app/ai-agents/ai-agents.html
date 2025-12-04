@@ -1,0 +1,36 @@
+<div class="agents-container">
+  <div class="header">
+    <h1>My AI Agents</h1>
+    <button class="create-btn">+ New Agent</button>
+  </div>
+
+  <div class="agents-grid">
+    <div class="agent-card" *ngFor="let agent of agentsList">
+      
+      <div class="agent-header">
+        <div class="title-section">
+          <mat-icon class="agent-icon">{{ agent.avatar }}</mat-icon>
+          <h3>{{ agent.name }}</h3>
+        </div>
+        <span class="status" [ngClass]="agent.status.toLowerCase()">
+          ● {{ agent.status }}
+        </span>
+      </div>
+
+      <p class="role">{{ agent.role }}</p>
+
+      <div class="stats">
+        <div class="stat-item">
+          <span class="label">Tasks</span>
+          <span class="value">{{ agent.tasks }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="label">Rating</span>
+          <span class="value">⭐ {{ agent.rating }}</span>
+        </div>
+      </div>
+
+      <button class="config-btn">Configure</button>
+    </div>
+  </div>
+</div>

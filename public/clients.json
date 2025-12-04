@@ -1,0 +1,8 @@
+[
+  { "id": 101, "name": "Ion Popescu", "company": "Dacia Renault", "revenue": "€1.2M", "status": "Active", "lastMeeting": "2 days ago" },
+  { "id": 102, "name": "Sarah Connor", "company": "Cyberdyne Systems", "revenue": "€5.4M", "status": "Churn Risk", "lastMeeting": "Yesterday" },
+  { "id": 103, "name": "John Doe", "company": "Continental", "revenue": "€850k", "status": "Pending", "lastMeeting": "1 week ago" },
+  { "id": 104, "name": "Maria Ionescu", "company": "Banca Transilvania", "revenue": "€2.1M", "status": "Active", "lastMeeting": "Today" },
+  { "id": 105, "name": "Hans Muller", "company": "Global Tech", "revenue": "€12.5M", "status": "Active", "lastMeeting": "3 days ago" },
+  { "id": 106, "name": "Linda Smith", "company": "Innovatech", "revenue": "€3.3M", "status": "Churn Risk", "lastMeeting": "Last month" }
+]

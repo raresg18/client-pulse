@@ -1,0 +1,118 @@
+$primary: #6366f1;
+$text-dark: #1f2937;
+$text-gray: #6b7280;
+
+.agents-container {
+  padding: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+
+  h1 { font-size: 2rem; color: $text-dark; font-weight: 700; margin: 0; }
+
+  .create-btn {
+    background: $primary;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    &:hover { background: #4f46e5; }
+  }
+}
+
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.agent-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1);
+  }
+
+  .agent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+
+    .title-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      
+      .agent-icon {
+        background: #e0e7ff;
+        color: $primary;
+        padding: 8px;
+        border-radius: 8px;
+        width: 40px; height: 40px;
+        display: flex; align-items: center; justify-content: center;
+      }
+
+      h3 { margin: 0; font-size: 1.25rem; color: $text-dark; }
+    }
+  }
+
+  .role {
+    color: $text-gray;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      
+      .label { font-size: 0.8rem; color: $text-gray; text-transform: uppercase; letter-spacing: 0.05em; }
+      .value { font-size: 1.1rem; font-weight: 700; color: $text-dark; margin-top: 4px; }
+    }
+  }
+
+  .config-btn {
+    width: 100%;
+    padding: 10px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    color: $text-dark;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    
+    &:hover { background: $text-dark; color: white; }
+  }
+}
+
+.status {
+  font-size: 0.75rem; font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 10px; border-radius: 20px;
+
+  &.online { background: #dcfce7; color: #166534; }
+  &.offline { background: #f3f4f6; color: #4b5563; }
+  &.maintenance { background: #ffedd5; color: #9a3412; }
+}

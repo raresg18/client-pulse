@@ -1,0 +1,21 @@
+.app-container {
+  height: calc(100vh - 64px); 
+}
+
+.app-toolbar {
+  position: relative; 
+  z-index: 2;
+}
+
+.app-sidenav {
+  width: 250px; 
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.spacer {
+  flex: 1 1 auto; 
+}
+
+.content-wrapper {
+  padding: 20px;
+}

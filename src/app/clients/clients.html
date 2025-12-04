@@ -1,0 +1,12 @@
+<tbody>
+  <tr *ngFor="let client of clientList">
+    <td>{{ client.name }}</td>
+    <td>{{ client.company }}</td>
+    <td>
+       <span class="status" [ngClass]="client.status?.toLowerCase()">
+        {{ client.status }}
+      </span>
+    </td>
+    <td>{{ client.lasMeeting || client.date }}</td> <td><button class="edit-btn">Edit</button></td>
+  </tr>
+</tbody>
