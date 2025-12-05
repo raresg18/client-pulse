@@ -1,12 +1,53 @@
-<tbody>
-  <tr *ngFor="let client of clientList">
-    <td>{{ client.name }}</td>
-    <td>{{ client.company }}</td>
-    <td>
-       <span class="status" [ngClass]="client.status?.toLowerCase()">
-        {{ client.status }}
-      </span>
-    </td>
-    <td>{{ client.lasMeeting || client.date }}</td> <td><button class="edit-btn">Edit</button></td>
-  </tr>
-</tbody>
+<div class="clients-container">
+  
+  <div class="header">
+    <div class="title-section">
+      <h1>Client List</h1>
+      <p class="subtitle">Manage your portfolio</p>
+    </div>
+
+    <div class="actions-section">
+      <div class="search-box">
+        <input 
+          type="text" 
+          placeholder="Search clients..." 
+          [(ngModel)]="searchText" 
+          (input)="onSearch()"
+        >
+      </div>
+
+      <button class="add-btn" (click)="openAddDialog()">+ Add Client</button>
+    </div>
+  </div>
+
+  <table class="clients-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Company</th>
+        <th>Status</th>
+        <th>Last Meeting</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of clientList">
+        <td>{{ client.name }}</td>
+        <td>{{ client.company }}</td>
+        <td>
+          <span class="status" [ngClass]="client.status.toLowerCase()">
+            {{ client.status }}
+          </span>
+        </td>
+        <td>{{ client.lastMeeting || client.date }}</td>
+        
+        <td class="actions-cell">
+          <button class="edit-btn" (click)="openEditDialog(client)">Edit</button>
+          <button class="delete-btn" (click)="deleteClient(client)">Delete</button>
+        </td>
+        
+      </tr>
+    </tbody>
+  </table>
+
+</div>

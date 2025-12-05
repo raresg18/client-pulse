@@ -1,0 +1,40 @@
+<div class="dialog-header">
+  <h2 mat-dialog-title>{{ isEditMode ? 'Edit Client' : 'New Client' }}</h2>
+  <p class="subtitle">
+    {{ isEditMode ? 'Update the details below.' : 'Enter the details to onboard a new company.' }}
+  </p>
+</div>
+
+<div mat-dialog-content class="modern-form">
+  <div class="form-group">
+    <label>CLIENT NAME</label>
+    <div class="input-wrapper">
+      <input type="text" [(ngModel)]="newClient.name" placeholder="e.g. Ion Popescu">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>COMPANY</label>
+    <div class="input-wrapper">
+      <input type="text" [(ngModel)]="newClient.company" placeholder="e.g. Dacia Renault">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>STATUS</label>
+    <div class="input-wrapper select-wrapper">
+      <mat-select [(ngModel)]="newClient.status" disableOptionCentering panelClass="modern-select-panel">
+        <mat-option value="Active">Active</mat-option>
+        <mat-option value="Pending">Pending</mat-option>
+        <mat-option value="Churn Risk">Churn Risk</mat-option>
+      </mat-select>
+    </div>
+  </div>
+</div>
+
+<div mat-dialog-actions class="actions">
+  <button class="cancel-btn" (click)="onCancel()">Cancel</button>
+  <button class="save-btn" (click)="onSave()">
+    {{ isEditMode ? 'Save Changes' : 'Create Client' }}
+  </button>
+</div>
