@@ -4,18 +4,20 @@ import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { AddClientDialog } from './dialog/add-client-dialog';
 import { FormsModule } from '@angular/forms';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-clients',
   standalone: true,
-  imports: [CommonModule, MatDialogModule, FormsModule],
+  imports: [CommonModule, MatDialogModule, FormsModule, MatSnackBarModule],
   templateUrl: './clients.html',
   styleUrl: './clients.scss'
 })
 export class Clients implements OnInit {
   private http = inject(HttpClient);
   private dialog = inject(MatDialog);
-  
+  private snackBar = inject(MatSnackBar);
+
   allClients: any[] = [];
   clientList: any[] = [];
   searchText: string = '';
@@ -45,6 +47,7 @@ export class Clients implements OnInit {
       if (result) {
         this.allClients = [result, ...this.allClients];
         this.onSearch();
+        this.snackBar.open('Client added successfully', 'Close', { duration: 3000 });
       }
     });
   }
@@ -57,6 +60,7 @@ export class Clients implements OnInit {
         if (index !== -1) {
           this.allClients[index] = result;
           this.onSearch(); 
+          this.snackBar.open('Client updated successfully', 'Close', { duration: 3000 });
         }
       }
     });
@@ -66,6 +70,7 @@ export class Clients implements OnInit {
     if (confirm(`Are you sure you want to delete ${client.name}?`)) {
       this.allClients = this.allClients.filter(c => c !== client);
       this.onSearch();
+      this.snackBar.open('Client deleted successfully', 'Close', { duration: 3000 });
     }
   }
 }

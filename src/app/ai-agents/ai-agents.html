@@ -1,7 +1,7 @@
 <div class="agents-container">
   <div class="header">
     <h1>My AI Agents</h1>
-    <button class="create-btn">+ New Agent</button>
+    <button class="create-btn" (click)="openAddAgent()">+ New Agent</button>
   </div>
 
   <div class="agents-grid">
@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <button class="config-btn">Configure</button>
+      <button class="config-btn" (click)="openConfigAgent(agent)">Configure</button>
     </div>
   </div>
 </div>

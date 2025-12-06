@@ -1,0 +1,60 @@
+<div class="dialog-header">
+  <h2 mat-dialog-title>{{ isEditMode ? 'Configure Agent' : 'Deploy New Agent' }}</h2>
+  <p class="subtitle">
+    {{ isEditMode ? 'Update agent parameters and status.' : 'Initialize a new AI assistant.' }}
+  </p>
+</div>
+
+<div mat-dialog-content class="modern-form">
+  
+  <div class="form-group">
+    <label>AGENT NAME</label>
+    <div class="input-wrapper">
+      <input type="text" [(ngModel)]="agentData.name" placeholder="e.g. Support Bot Beta">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>ROLE / FUNCTION</label>
+    <div class="input-wrapper select-wrapper">
+      <mat-select [(ngModel)]="agentData.role" panelClass="modern-select-panel">
+        <mat-option value="Customer Support">Customer Support</mat-option>
+        <mat-option value="Lead Generation">Lead Generation</mat-option>
+        <mat-option value="Copywriting">Copywriting</mat-option>
+        <mat-option value="Analytics">Analytics</mat-option>
+      </mat-select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>OPERATIONAL STATUS</label>
+    <div class="input-wrapper select-wrapper">
+      <mat-select [(ngModel)]="agentData.status" panelClass="modern-select-panel">
+        <mat-option value="Online">🟢 Online</mat-option>
+        <mat-option value="Offline">⚫ Offline</mat-option>
+        <mat-option value="Maintenance">🟠 Maintenance</mat-option>
+      </mat-select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>AVATAR ICON</label>
+    <div class="input-wrapper select-wrapper">
+      <mat-select [(ngModel)]="agentData.avatar" panelClass="modern-select-panel">
+        <mat-option value="smart_toy">🤖 Robot Head</mat-option>
+        <mat-option value="rocket_launch">🚀 Rocket</mat-option>
+        <mat-option value="edit_note">📝 Edit</mat-option>
+        <mat-option value="analytics">📊 Chart</mat-option>
+        <mat-option value="support_agent">🎧 Headset</mat-option>
+      </mat-select>
+    </div>
+  </div>
+
+</div>
+
+<div mat-dialog-actions class="actions">
+  <button class="cancel-btn" (click)="onCancel()">Cancel</button>
+  <button class="save-btn" (click)="onSave()">
+    {{ isEditMode ? 'Save Config' : 'Deploy Agent' }}
+  </button>
+</div>

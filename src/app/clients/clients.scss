@@ -204,3 +204,40 @@ $text-gray: #64748b;
     border-radius: 6px;
   }
 }
+
+
+// this part is the integration for mobile responsiveness 
+
+@media (max-width: 768px) {
+  .clients-container {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+
+    .actions-section {
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+      
+      .search-box input {
+        width: 100%;
+      }
+      
+      .add-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  .clients-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
